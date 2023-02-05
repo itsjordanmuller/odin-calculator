@@ -19,3 +19,13 @@ numbers.forEach((number) => {
         updateDisplay();
     });
 });
+
+function inputNumber(number) {
+    if (calculator.waitingForSecondOperand === true) {
+        calculator.displayValue = number;
+        calculator.waitingForSecondOperand = false;
+    } else {
+        calculator.displayValue =
+            calculator.displayValue === '0' ? number : calculator.displayValue + number;
+    }
+}
