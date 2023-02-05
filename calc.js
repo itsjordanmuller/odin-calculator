@@ -10,3 +10,12 @@ function updateDisplay() {
     display.querySelector('span').textContent = calculator.displayValue;
 }
 updateDisplay();
+
+const numbers = document.querySelectorAll('.number');
+numbers.forEach((number) => {
+    number.addEventListener('click', (event) => {
+        const { target } = event;
+        inputNumber(target.textContent);
+        updateDisplay();
+    });
+});
