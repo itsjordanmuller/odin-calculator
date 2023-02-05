@@ -35,3 +35,15 @@
     grid-template-rows: repeat(5, 1fr);
     grid-gap: 10px;
 }
+
+.clear,
+.number,
+.operator {
+    width: 60px;
+    height: 60px;
+    background-color: #ffffff;
+    color: #000000;
+    font-size: 2rem;
+    border: 1px solid #1d1d1d;
+    cursor: pointer;
+}
