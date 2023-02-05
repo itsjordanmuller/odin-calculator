@@ -4,3 +4,17 @@ This is a GitHub repository meant to store my Calculator project. This project w
 - subctract
 - multiply
 - divide
+
+# Files for This Assignment
+
+## README.md
+The document you are currently reading!
+
+## index.html
+The HTML document that hold this all together, the initial layout of buttons and elements happens here.
+
+## style.css
+The styling of the calculator, including padding, margins, colors, etc.
+
+## calc.js
+The functional and computational side of the calculator, this is where each operator is connected to a function that takes input variables from the calculator.
