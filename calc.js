@@ -29,3 +29,12 @@ function inputNumber(number) {
             calculator.displayValue === '0' ? number : calculator.displayValue + number;
     }
 }
+
+const operators = document.querySelectorAll('.operator');
+operators.forEach((operator) => {
+    operator.addEventListener('click', (event) => {
+        const { target } = event;
+        handleOperator(target.textContent);
+        updateDisplay();
+    });
+});
