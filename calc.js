@@ -69,3 +69,12 @@ const performCalculation = {
     '-': (firstOperand, secondOperand) => firstOperand - secondOperand,
     '=': (firstOperand, secondOperand) => secondOperand
 };
+
+const clearButton = document.querySelector('.clear');
+clearButton.addEventListener('click', () => {
+    calculator.displayValue = '0';
+    calculator.firstOperand = null;
+    calculator.waitingForSecondOperand = false;
+    calculator.operator = null;
+    updateDisplay();
+});
