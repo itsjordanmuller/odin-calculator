@@ -38,3 +38,34 @@ operators.forEach((operator) => {
         updateDisplay();
     });
 });
+
+function handleOperator(nextOperator) {
+    const { firstOperand, displayValue, operator } = calculator;
+    const inputValue = parseFloat(displayValue);
+
+    if (operator && calculator.waitingForSecondOperand) {
+        calculator.operator = nextOperator;
+        return;
+    }
+
+    if (firstOperand == null) {
+        calculator.firstOperand = inputValue;
+    } else if (operator) {
+        const currentValue = firstOperand || 0;
+        const result = performCalculation[operator](currentValue, inputValue);
+
+        calculator.displayValue = String(result);
+        calculator.firstOperand = result;
+    }
+
+    calculator.waitingForSecondOperand = true;
+    calculator.operator = nextOperator;
+}
+
+const performCalculation = {
+    '/': (firstOperand, secondOperand) => firstOperand / secondOperand,
+    '*': (firstOperand, secondOperand) => firstOperand * secondOperand,
+    '+': (firstOperand, secondOperand) => firstOperand + secondOperand,
+    '-': (firstOperand, secondOperand) => firstOperand - secondOperand,
+    '=': (firstOperand, secondOperand) => secondOperand
+};
